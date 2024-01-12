@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "487683131522",
+    "project_id": "personalblog-e1cf8",
+    "storage_bucket": "personalblog-e1cf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487683131522:android:86a0e31c23d7221ac30c9b",
+        "android_client_info": {
+          "package_name": "com.alpermelkeli.personalblog"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs3FsdPlMI9D0MkJED7yjKbtyId2xhvp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
