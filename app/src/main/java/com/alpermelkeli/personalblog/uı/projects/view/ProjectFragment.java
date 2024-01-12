@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -23,7 +24,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemClickListener {
-    //new comment line
 
     private ProjectViewModel projectViewModel;
     private ProjectAdapter projectAdapter;
@@ -31,10 +31,14 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
     RecyclerView recyclerView;
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_project, container, false);
         ButterKnife.bind(this,rootView);
+
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         projectAdapter = new ProjectAdapter(new ArrayList<>(), this);
@@ -87,5 +91,4 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
 
 
 
-    //second comment line
 }

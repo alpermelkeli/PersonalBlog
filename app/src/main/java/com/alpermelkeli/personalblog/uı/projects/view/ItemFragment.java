@@ -3,6 +3,7 @@ package com.alpermelkeli.personalblog.uı.projects.view;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,9 @@ public class ItemFragment extends Fragment {
     @BindView(R.id.projectImage)
     ImageView projectImage;
 
+    @BindView(R.id.backButton)
+    ImageView backButton;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,7 +42,7 @@ public class ItemFragment extends Fragment {
 
         bundle = getArguments();
         changeText();
-
+        returnBack();
 
 
         return view;
@@ -56,6 +60,23 @@ public class ItemFragment extends Fragment {
                 .centerCrop()
                 .into(projectImage);
     }
+    public void returnBack(){
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ProjectFragment projectFragment = new ProjectFragment();
+                replaceFragment(projectFragment);
+
+            }
+        });
+
+
+    }
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.homescreenFragmentLayout, fragment);
+        transaction.commit();
+    }
 
 }
