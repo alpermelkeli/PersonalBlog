@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alpermelkeli.personalblog.R;
+import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,8 +45,16 @@ public class ItemFragment extends Fragment {
     }
 
     public void changeText(){
+        changeImageWithGlide(bundle.getString("imageUrl"));
         titleText.setText(bundle.getString("title"));
         descriptionText.setText(bundle.getString("description"));
+    }
+
+    public void changeImageWithGlide(String imageUrl){
+        Glide.with(this)
+                .load(imageUrl)
+                .centerCrop()
+                .into(projectImage);
     }
 
 
