@@ -23,6 +23,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemClickListener {
+    //new comment line
+
     private ProjectViewModel projectViewModel;
     private ProjectAdapter projectAdapter;
     @BindView(R.id.recyclerView)
