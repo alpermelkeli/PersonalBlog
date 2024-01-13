@@ -15,7 +15,7 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginStart="15dp"
-            android:src="@drawable/software"
+            android:src="@drawable/myimage"
             app:shapeAppearance="@style/circle"
             android:scaleType="centerCrop"
             />
@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:text="Explore amazing app projects"
+                android:text="Projects Blog App"
                 android:textSize="15sp"
                 android:textAllCaps="false"
                 />
@@ -55,6 +55,103 @@
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="335dp"
+        android:layout_height="190dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_rectangle_with_shadow"
+        android:elevation="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/recentProjectImage"
+                android:layout_width="80dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="25dp"
+                app:shapeAppearance="@style/circle"
+                >
+            </com.google.android.material.imageview.ShapeableImageView>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Featured Proejcts"
+                    android:textAlignment="textEnd"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/recentProjectTitleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textAlignment="textEnd"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            >
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Category"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="13sp"
+                />
+            <TextView
+                android:id="@+id/recentProjectCategory"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="235dp"
+            android:layout_height="30dp"
+            android:text="Projects"
+            android:textSize="24sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:layout_marginStart="25dp"/>
+
+    </LinearLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView

@@ -29,6 +29,7 @@ public class ProjectRepository {
                                 newProject.setDescription(document.get("description").toString());
                                 newProject.setTitle(document.get("title").toString());
                                 newProject.setImageUrl(document.get("imageUrl").toString());
+                                newProject.setCategory(document.get("category").toString()); // added category feature
                                 projects.add(newProject);
 
                             }

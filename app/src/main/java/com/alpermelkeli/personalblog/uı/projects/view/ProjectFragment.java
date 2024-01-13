@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -17,6 +18,8 @@ import com.alpermelkeli.personalblog.R;
 import com.alpermelkeli.personalblog.model.Project;
 import com.alpermelkeli.personalblog.uı.projects.view.adapter.ProjectAdapter;
 import com.alpermelkeli.personalblog.uı.projects.viewmodel.ProjectViewModel;
+import com.bumptech.glide.Glide;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.ArrayList;
 
@@ -29,6 +32,15 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
     private ProjectAdapter projectAdapter;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+
+    @BindView(R.id.recentProjectCategory)
+    TextView recentProjectCategory;
+
+    @BindView(R.id.recentProjectTitleText)
+    TextView recentProjectTitleText;
+
+    @BindView(R.id.recentProjectImage)
+    ShapeableImageView recentProjectImage;
 
 
 
@@ -47,6 +59,7 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
         projectViewModel = new ViewModelProvider(this).get(ProjectViewModel.class);
 
         projectViewModel.getProjectsLiveData().observe(getViewLifecycleOwner(), projects -> {
+            loadRecentProject(projects.get(0)); // Load top of the UI with recent project
             projectAdapter.setProjects(projects);
             projectAdapter.notifyDataSetChanged();
         });
@@ -72,6 +85,8 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
 
         bundle.putString("imageUrl",project.getImageUrl());
 
+        bundle.putString("category",project.getCategory());
+
         // Fragment that I will show.
         ItemFragment itemFragment = new ItemFragment();
 
@@ -87,6 +102,17 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.homescreenFragmentLayout, fragment);
         transaction.commit();
+    }
+
+    // I add this for load recent project to UI and it is work in viewModel get data method
+    public void loadRecentProject(Project recentProject){
+        recentProjectCategory.setText(recentProject.getCategory().toString());
+        recentProjectTitleText.setText(recentProject.getTitle().toString());
+        Glide.with(this).
+                load(recentProject.getImageUrl()).
+                centerCrop().
+                into(recentProjectImage);
+
     }
 
 

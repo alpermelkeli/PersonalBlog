@@ -6,6 +6,16 @@ public class Project {
     private String description;
     private String imageUrl;
 
+    private String category;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public String getProjectId() {
         return projectId;
     }
