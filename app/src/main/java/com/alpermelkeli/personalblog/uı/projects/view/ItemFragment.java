@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
@@ -85,17 +86,15 @@ public class ItemFragment extends Fragment {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ProjectFragment projectFragment = new ProjectFragment();
-                replaceFragment(projectFragment);
+                returnPreviousFragment();
 
             }
         });
 
     }
-    private void replaceFragment(Fragment fragment) {
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.homescreenFragmentLayout, fragment);
-        transaction.commit();
+    private void returnPreviousFragment() {
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        fm.popBackStack();
     }
 
 }

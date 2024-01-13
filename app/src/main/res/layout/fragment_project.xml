@@ -88,7 +88,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Featured Proejcts"
+                    android:text="Featured Project"
                     android:textAlignment="textEnd"
                     android:textAllCaps="false" />
 

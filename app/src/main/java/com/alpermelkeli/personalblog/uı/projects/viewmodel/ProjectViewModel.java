@@ -7,11 +7,14 @@ import androidx.lifecycle.ViewModel;
 import com.alpermelkeli.personalblog.model.Project;
 import com.alpermelkeli.personalblog.repository.ProjectRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectViewModel extends ViewModel {
     private final ProjectRepository projectRepository;
     private MutableLiveData<List<Project>> projectsLiveData;
+
+    private boolean isLoaded = false;
 
 
     public ProjectViewModel() {
@@ -25,6 +28,10 @@ public class ProjectViewModel extends ViewModel {
 
     public void loadProjects() {
         // Get projects from firebase and set projectsLiveData value
-        projectRepository.getProjects(projects -> projectsLiveData.setValue(projects));
+        if (!isLoaded){
+            projectRepository.getProjects(projects -> projectsLiveData.setValue(projects)
+            );
+            isLoaded = true;
+        }
     }
 }
