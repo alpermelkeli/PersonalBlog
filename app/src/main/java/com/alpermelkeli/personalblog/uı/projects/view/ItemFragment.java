@@ -1,7 +1,10 @@
 package com.alpermelkeli.personalblog.uı.projects.view;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -10,10 +13,13 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alpermelkeli.personalblog.R;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.transition.Transition;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,8 +34,8 @@ public class ItemFragment extends Fragment {
     TextView titleText;
     @BindView(R.id.descriptionText)
     TextView descriptionText;
-    @BindView(R.id.projectImage)
-    ImageView projectImage;
+    @BindView(R.id.layoutWithBackground)
+    LinearLayout layoutWithBackground;
     @BindView(R.id.backButton)
     ImageView backButton;
 
@@ -57,12 +63,22 @@ public class ItemFragment extends Fragment {
         titleText.setText(bundle.getString("title"));
         descriptionText.setText(bundle.getString("description"));
     }
-
-    public void uploadImageWithGlide(String imageUrl){
+    // To see backButton on photo I changed my method and I use linearlayout background instead of imageView
+    public void uploadImageWithGlide(String imageUrl) {
         Glide.with(this)
                 .load(imageUrl)
                 .centerCrop()
-                .into(projectImage);
+                .into(new CustomTarget<Drawable>() {
+                    @Override
+                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                        layoutWithBackground.setBackground(resource);
+                    }
+
+                    @Override
+                    public void onLoadCleared(@Nullable Drawable placeholder) {
+                        // Placeholder handling, if needed.
+                    }
+                });
     }
     public void returnBack(){
 

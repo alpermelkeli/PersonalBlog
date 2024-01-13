@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
@@ -69,6 +70,12 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
         return rootView;
     }
 
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
     @Override
     public void onItemClick(Project project) {
         pass_to_selected_project(project);
@@ -101,6 +108,7 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
     private void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.homescreenFragmentLayout, fragment);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 
@@ -112,6 +120,11 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
                 load(recentProject.getImageUrl()).
                 centerCrop().
                 into(recentProjectImage);
+
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
 
     }
 
