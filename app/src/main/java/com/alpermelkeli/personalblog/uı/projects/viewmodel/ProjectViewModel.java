@@ -23,7 +23,7 @@ public class ProjectViewModel extends ViewModel {
     }
 
     public void loadProjects() {
-        // Firestore'dan projeleri al ve LiveData'ya set et
+        // Get projects from firebase and set projectsLiveData value
         projectRepository.getProjects(projects -> projectsLiveData.setValue(projects));
     }
 }

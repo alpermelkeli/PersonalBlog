@@ -30,7 +30,6 @@ public class ItemFragment extends Fragment {
     TextView descriptionText;
     @BindView(R.id.projectImage)
     ImageView projectImage;
-
     @BindView(R.id.backButton)
     ImageView backButton;
 
@@ -40,21 +39,26 @@ public class ItemFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_item, container, false);
         ButterKnife.bind(this, view);
 
+        // get arguments from previous fragment
         bundle = getArguments();
-        changeText();
+
+        // change text and photo by this arguments
+        changeTextAndImage();
+
+        // if user tap on back button return previous fragment
         returnBack();
 
 
         return view;
     }
 
-    public void changeText(){
-        changeImageWithGlide(bundle.getString("imageUrl"));
+    public void changeTextAndImage(){
+        uploadImageWithGlide(bundle.getString("imageUrl"));
         titleText.setText(bundle.getString("title"));
         descriptionText.setText(bundle.getString("description"));
     }
 
-    public void changeImageWithGlide(String imageUrl){
+    public void uploadImageWithGlide(String imageUrl){
         Glide.with(this)
                 .load(imageUrl)
                 .centerCrop()
@@ -70,7 +74,6 @@ public class ItemFragment extends Fragment {
 
             }
         });
-
 
     }
     private void replaceFragment(Fragment fragment) {
