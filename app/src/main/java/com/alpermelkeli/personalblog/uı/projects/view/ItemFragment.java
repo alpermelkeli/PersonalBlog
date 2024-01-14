@@ -60,12 +60,12 @@ public class ItemFragment extends Fragment {
     }
 
     public void changeTextAndImage(){
-        uploadImageWithGlide(bundle.getString("imageUrl"));
+        uploadImageToBackgroundWithGlide(bundle.getString("imageUrl"));
         titleText.setText(bundle.getString("title"));
         descriptionText.setText(bundle.getString("description"));
     }
     // To see backButton on photo I changed my method and I use linearlayout background instead of imageView
-    public void uploadImageWithGlide(String imageUrl) {
+    public void uploadImageToBackgroundWithGlide(String imageUrl) {
         Glide.with(this)
                 .load(imageUrl)
                 .centerCrop()

@@ -102,15 +102,19 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
         //Put data to this fragment
         itemFragment.setArguments(bundle);
 
-        replaceFragment(itemFragment);
+        replaceFragmentToItem(itemFragment);
 
 
 
     }
-    private void replaceFragment(Fragment fragment) {
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.homescreenFragmentLayout, fragment);
-        transaction.addToBackStack(null);
+    private void replaceFragmentToItem(Fragment fragment) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.slide_in,
+                        R.anim.fade_out,                //I added animations.
+                        R.anim.fade_in,
+                        R.anim.slide_out)
+        .replace(R.id.homescreenFragmentLayout, fragment)
+        .addToBackStack(null);
         transaction.commit();
     }
 
@@ -122,11 +126,6 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
                 load(recentProject.getImageUrl()).
                 centerCrop().
                 into(recentProjectImage);
-
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
 
     }
 

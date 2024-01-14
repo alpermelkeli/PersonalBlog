@@ -27,7 +27,7 @@ public class ProjectViewModel extends ViewModel {
     }
 
     public void loadProjects() {
-        // Get projects from firebase and set projectsLiveData value
+        // Get projects from firebase and set projectsLiveData value if haven't get data before.
         if (!isLoaded){
             projectRepository.getProjects(projects -> projectsLiveData.setValue(projects)
             );
