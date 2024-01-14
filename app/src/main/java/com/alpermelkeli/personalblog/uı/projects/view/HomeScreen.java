@@ -22,8 +22,6 @@ import butterknife.ButterKnife;
 
 public class HomeScreen extends AppCompatActivity {
     Fragment projectFragment;
-
-
     private boolean doubleBackToExitPressedOnce = false;
 
     @Override

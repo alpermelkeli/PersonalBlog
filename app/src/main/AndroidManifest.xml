@@ -11,6 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalBlog"
         tools:targetApi="31">
+        <service
+            android:name=".repository.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".uı.projects.view.HomeScreen"
             android:exported="false" />
