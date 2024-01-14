@@ -113,7 +113,6 @@ public class ItemFragment extends Fragment {
         FragmentManager fm = getActivity().getSupportFragmentManager();
         fm.popBackStack();
     }
-
     private void setOnClickForLinks(){
         githubLink.setOnClickListener(new View.OnClickListener() {
             @Override
