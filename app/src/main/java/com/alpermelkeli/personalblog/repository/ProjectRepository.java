@@ -16,7 +16,7 @@ public class ProjectRepository {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     List<Project> projects = new ArrayList<>();
     public void getProjects(ProjectCallback callback) {
-        db.collection("Projects")
+        db.collection("Projects").orderBy("id") // Projects ordered by id
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
