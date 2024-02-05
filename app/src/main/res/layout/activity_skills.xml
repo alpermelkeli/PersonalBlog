@@ -1,7 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uı.skills.view.SkillsActivity"/>
+    tools:context=".uı.skills.view.SkillsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Skills"
+            android:textSize="50sp"
+            android:textColor="#787878"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="370dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="I possess a diverse set of skills that make me a versatile and capable developer. My proficiency in Python extends to both scripting and application development, demonstrating my adaptability with this powerful programming language. Using Flask, I have successfully developed web applications and RESTful APIs, showcasing my expertise in this lightweight and flexible Python web framework. In the realm of web services, I am experienced in designing and implementing solutions that facilitate seamless communication between different software systems. My competency extends to mobile app development using Android Studio, where I create engaging and user-friendly applications tailored for the Android platform. Additionally, my Java programming skills are well-honed, allowing me to leverage its object-oriented features for the development of robust and scalable software solutions. In the domain of algorithms, I am proficient in designing and analyzing algorithms, demonstrating my ability to efficiently solve complex problems and optimize code for enhanced performance."
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            />
+
+        <LinearLayout
+            android:id="@+id/skillsLinearLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>

@@ -47,6 +47,5 @@ public class Project {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-    // Getter ve setter metodları
 }
 
