@@ -1,4 +1,4 @@
-package com.alpermelkeli.personalblog.uı.projects.view;
+package com.alpermelkeli.personalblog.uı.projects.view.fragments;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;

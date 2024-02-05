@@ -1,12 +1,10 @@
-package com.alpermelkeli.personalblog.uı.projects.view;
+package com.alpermelkeli.personalblog.uı.projects.view.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,7 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alpermelkeli.personalblog.R;
 import com.alpermelkeli.personalblog.model.Project;
 import com.alpermelkeli.personalblog.uı.projects.view.adapter.ProjectAdapter;
-import com.alpermelkeli.personalblog.uı.projects.viewmodel.ProjectViewModel;
+import com.alpermelkeli.personalblog.uı.projects.view.fragments.ItemFragment;
+import com.alpermelkeli.personalblog.viewmodel.ProjectViewModel;
 import com.bumptech.glide.Glide;
 import com.google.android.material.imageview.ShapeableImageView;
 

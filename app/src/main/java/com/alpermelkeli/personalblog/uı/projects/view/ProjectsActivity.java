@@ -6,10 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.widget.Toast;
 
 import com.alpermelkeli.personalblog.R;
+import com.alpermelkeli.personalblog.uı.projects.view.fragments.ProjectFragment;
 
 public class ProjectsActivity extends AppCompatActivity {
     Fragment projectFragment;

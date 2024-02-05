@@ -1,4 +1,4 @@
-package com.alpermelkeli.personalblog.uı.projects.viewmodel;
+package com.alpermelkeli.personalblog.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
