@@ -1,5 +1,6 @@
 package com.alpermelkeli.personalblog.uı.skills.view;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -19,6 +20,7 @@ public class CustomPolygonView extends View {
     private Path path;
     private LinkedHashMap<Integer, Float> cornerProgressMap; // Köşe ilerleme haritası: köşe indeksi ve ilerleme yüzdesi
     private ArrayList<String> skillList = new ArrayList<>();
+
     public CustomPolygonView(Context context) {
         super(context);
         init();
@@ -42,6 +44,7 @@ public class CustomPolygonView extends View {
 
         path = new Path();
         cornerProgressMap = new LinkedHashMap<>();
+
     }
 
     // Köşelerin ilerleme yüzdesini ayarlamak için

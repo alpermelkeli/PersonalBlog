@@ -37,6 +37,7 @@
                 android:layout_height="34dp"
                 android:text="Welcome to"
                 android:textSize="24sp"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:textStyle="bold"
                 />
@@ -44,7 +45,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:text="Projects Blog App"
+                android:text="Portfolio App"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textAllCaps="false"
                 />
@@ -92,6 +94,7 @@
                     android:layout_height="30dp"
                     android:text="Featured Project"
                     android:textAlignment="textEnd"
+                    android:textColor="@color/black"
                     android:textAllCaps="false" />
 
                 <TextView
@@ -119,6 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:text="Category"
+                android:textColor="@color/black"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textSize="13sp"
@@ -149,6 +153,7 @@
             android:layout_height="30dp"
             android:text="Projects"
             android:textSize="24sp"
+            android:textColor="@color/white"
             android:textAllCaps="false"
             android:textStyle="bold"
             android:layout_marginStart="25dp"/>

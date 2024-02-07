@@ -24,10 +24,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
+
             >
             <TextView
                 
-                android:layout_width="280dp"
+                android:layout_width="315dp"
                 android:layout_height="24dp"
                 android:text="My Projects"
                 android:textStyle="bold"
@@ -37,10 +38,10 @@
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/myProjectButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/righticon"
+                android:background="@drawable/rightbutton"
                 />
 
 
@@ -55,7 +56,7 @@
             >
             <TextView
 
-                android:layout_width="280dp"
+                android:layout_width="315dp"
                 android:layout_height="24dp"
                 android:text="Skills"
                 android:textStyle="bold"
@@ -65,10 +66,10 @@
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/skillsButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/righticon"
+                android:background="@drawable/rightbutton"
                 />
 
 
@@ -83,7 +84,7 @@
             >
             <TextView
 
-                android:layout_width="280dp"
+                android:layout_width="315dp"
                 android:layout_height="24dp"
                 android:text="Experience"
                 android:textStyle="bold"
@@ -93,10 +94,10 @@
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/experienceButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/righticon"
+                android:background="@drawable/rightbutton"
                 />
 
 
@@ -111,7 +112,7 @@
             >
             <TextView
 
-                android:layout_width="280dp"
+                android:layout_width="315dp"
                 android:layout_height="24dp"
                 android:text="Education"
                 android:textStyle="bold"
@@ -121,11 +122,12 @@
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/educationButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/righticon"
+                android:background="@drawable/rightbutton"
                 />
+
 
 
         </LinearLayout>
@@ -134,7 +136,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         android:layout_marginTop="100dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,8 +157,17 @@
             android:gravity="center_horizontal"
             android:paddingTop="7dp"
             android:text="Alper Melkeli"
+            android:textColor="@color/white"
             android:textSize="26sp"
             android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Android Developer\nAnkara"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            />
+
 
 
     </LinearLayout>

@@ -17,6 +17,7 @@
     android:layout_width="250dp"
     android:layout_height="24dp"
     android:textSize="18sp"
+        android:textColor="@color/white"
     android:textStyle="bold"
     android:layout_gravity="center_vertical"
         android:layout_marginStart="15dp"
@@ -24,10 +25,10 @@
 
         />
     <ImageView
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/righticon" />
+        android:src="@drawable/rightbutton" />
 
 
 

@@ -19,7 +19,7 @@
             android:layout_height="100dp"
             android:text="Skills"
             android:textSize="50sp"
-            android:textColor="#787878"
+            android:textColor="@color/white"
             android:gravity="center"
             />
 
@@ -28,6 +28,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:text="I develop some apps that I want to."
             android:textAlignment="center"
             android:textSize="18sp"
@@ -41,6 +42,42 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/custom_polygon_background"
             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="60dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/menu_background"
+                android:src="@drawable/giticon"
+
+                />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/menu_background"
+                android:src="@drawable/mvvmicon"
+
+                />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/firebaseicon"
+                android:background="@drawable/menu_background"
+
+                />
+
+
+
+        </LinearLayout>
 
 
     </LinearLayout>

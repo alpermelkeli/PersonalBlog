@@ -44,6 +44,7 @@ public class SkillsActivity extends AppCompatActivity {
             }
 
         });
+
         customPolygonView.addCorner(1,0.6f,"Flask");
         customPolygonView.addCorner(2,0.55f,"WebServices");
         customPolygonView.addCorner(3,0.6f,"Java");
