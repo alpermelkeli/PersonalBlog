@@ -153,7 +153,6 @@
             android:layout_height="30dp"
             android:text="Projects"
             android:textSize="24sp"
-            android:textColor="@color/white"
             android:textAllCaps="false"
             android:textStyle="bold"
             android:layout_marginStart="25dp"/>

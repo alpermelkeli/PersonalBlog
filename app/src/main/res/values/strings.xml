@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">PersonalBlog</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <dimen name="pageMargin">20dp</dimen>
+    <dimen name="pagerOffset">30dp</dimen>
+    <dimen name="pageMarginAndoffset">28dp</dimen>
 
 
 </resources>
