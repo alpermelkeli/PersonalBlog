@@ -1,4 +1,4 @@
-package com.alpermelkeli.personalblog.uı.navigate.view;
+package com.alpermelkeli.personalblog.uı.navigate;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alpermelkeli.personalblog.R;
-import com.alpermelkeli.personalblog.uı.education.view.EducationActivity;
-import com.alpermelkeli.personalblog.uı.experience.view.ExperienceActivity;
-import com.alpermelkeli.personalblog.uı.projects.view.ProjectsActivity;
-import com.alpermelkeli.personalblog.uı.skills.view.SkillsActivity;
+import com.alpermelkeli.personalblog.uı.education.EducationActivity;
+import com.alpermelkeli.personalblog.uı.experience.ExperienceActivity;
+import com.alpermelkeli.personalblog.uı.projects.ProjectsActivity;
+import com.alpermelkeli.personalblog.uı.skills.SkillsActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

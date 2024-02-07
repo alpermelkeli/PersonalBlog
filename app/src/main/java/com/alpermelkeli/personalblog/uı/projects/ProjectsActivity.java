@@ -1,4 +1,4 @@
-package com.alpermelkeli.personalblog.uı.projects.view;
+package com.alpermelkeli.personalblog.uı.projects;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import com.alpermelkeli.personalblog.R;
-import com.alpermelkeli.personalblog.uı.projects.view.fragments.ProjectFragment;
+import com.alpermelkeli.personalblog.uı.projects.fragments.ProjectFragment;
 
 public class ProjectsActivity extends AppCompatActivity {
     Fragment projectFragment;

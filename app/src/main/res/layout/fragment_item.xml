@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uı.projects.view.fragments.ItemFragment">
+    tools:context=".uı.projects.fragments.ItemFragment"
+    android:background="@drawable/app_background"
+
+    >
 
 
     <LinearLayout

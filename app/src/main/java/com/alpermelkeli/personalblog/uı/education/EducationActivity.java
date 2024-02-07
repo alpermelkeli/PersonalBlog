@@ -1,4 +1,4 @@
-package com.alpermelkeli.personalblog.uı.education.view;
+package com.alpermelkeli.personalblog.uı.education;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,5 +12,7 @@ public class EducationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_education);
+
+
     }
 }

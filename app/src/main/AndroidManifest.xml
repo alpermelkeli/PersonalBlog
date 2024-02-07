@@ -14,19 +14,19 @@
         android:theme="@style/Theme.PersonalBlog"
         tools:targetApi="31">
         <activity
-            android:name=".uı.skills.view.SkillsActivity"
+            android:name=".uı.skills.SkillsActivity"
             android:exported="false" />
         <activity
-            android:name=".uı.experience.view.ExperienceActivity"
+            android:name=".uı.experience.ExperienceActivity"
             android:exported="false" />
         <activity
-            android:name=".uı.education.view.EducationActivity"
+            android:name=".uı.education.EducationActivity"
             android:exported="false" />
         <activity
-            android:name=".uı.projects.view.ProjectsActivity"
+            android:name=".uı.projects.ProjectsActivity"
             android:exported="false" />
         <activity
-            android:name=".uı.navigate.view.MainActivity"
+            android:name=".uı.navigate.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

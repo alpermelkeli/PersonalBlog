@@ -1,4 +1,4 @@
-package com.alpermelkeli.personalblog.uı.projects.view.adapter;
+package com.alpermelkeli.personalblog.uı.projects.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

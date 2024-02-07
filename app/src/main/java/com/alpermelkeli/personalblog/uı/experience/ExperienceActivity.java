@@ -1,4 +1,4 @@
-package com.alpermelkeli.personalblog.uı.experience.view;
+package com.alpermelkeli.personalblog.uı.experience;
 
 import androidx.appcompat.app.AppCompatActivity;
 
