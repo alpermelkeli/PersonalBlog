@@ -45,13 +45,13 @@ public class SkillsActivity extends AppCompatActivity {
 
         });
         customPolygonView.addCorner(1,0.6f,"Flask");
-        customPolygonView.addCorner(2,0.75f,"Python");
+        customPolygonView.addCorner(2,0.55f,"WebServices");
         customPolygonView.addCorner(3,0.6f,"Java");
-        customPolygonView.addCorner(4,0.65f,"Android");
-        customPolygonView.addCorner(5,0.6f,"XML");
-        customPolygonView.addCorner(6,0.4f,"Data");
-        customPolygonView.addCorner(7,0.75f, "JSON");
-        customPolygonView.addCorner(8,0.55f,"WebServices");
+        customPolygonView.addCorner(4,0.75f,"Python");
+        customPolygonView.addCorner(5,0.65f,"Android");
+        customPolygonView.addCorner(6,0.6f,"XML");
+        customPolygonView.addCorner(7,0.4f,"Data");
+        customPolygonView.addCorner(8,0.75f, "JSON");
 
 
         skillsViewModel.loadSkills();

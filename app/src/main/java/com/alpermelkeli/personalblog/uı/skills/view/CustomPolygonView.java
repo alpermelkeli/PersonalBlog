@@ -110,7 +110,7 @@ public class CustomPolygonView extends View {
             for (String skill : skillList) {
 
                 // Calculate the text position
-                float textX = (float) (x0-30 + textRadius * Math.cos(currentTextAngle));
+                float textX = (float) (x0-35 + textRadius * Math.cos(currentTextAngle));
                 float textY = (float) (y0+10 + textRadius * Math.sin(currentTextAngle));
 
                 // Draw the text at the calculated position
