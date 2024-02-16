@@ -6,6 +6,7 @@ import com.alpermelkeli.personalblog.model.Project;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -16,7 +17,7 @@ public class ProjectRepository {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     List<Project> projects = new ArrayList<>();
     public void getProjects(ProjectCallback callback) {
-        db.collection("Projects").orderBy("id") // Projects ordered by id
+        db.collection("Projects").orderBy("id", Query.Direction.DESCENDING) // Projects ordered by id descending
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

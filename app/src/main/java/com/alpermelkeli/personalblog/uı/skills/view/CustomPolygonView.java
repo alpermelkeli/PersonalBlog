@@ -18,7 +18,7 @@ public class CustomPolygonView extends View {
 
     private Paint paint;
     private Path path;
-    private LinkedHashMap<Integer, Float> cornerProgressMap; // Köşe ilerleme haritası: köşe indeksi ve ilerleme yüzdesi
+    private LinkedHashMap<Integer, Float> cornerProgressMap;
     private ArrayList<String> skillList = new ArrayList<>();
 
     public CustomPolygonView(Context context) {
@@ -47,19 +47,17 @@ public class CustomPolygonView extends View {
 
     }
 
-    // Köşelerin ilerleme yüzdesini ayarlamak için
     public void setCornerProgress(int cornerIndex, float progress) {
         if (cornerProgressMap.containsKey(cornerIndex)) {
             cornerProgressMap.put(cornerIndex, progress);
-            invalidate(); // Yeniden çizim isteği
+            invalidate();
         }
     }
 
-    // Köşe ve ilerleme yüzdesi eklemek için
     public void addCorner(int cornerIndex, float progress, String skillName) {
         cornerProgressMap.put(cornerIndex, progress);
         skillList.add(skillName);
-        invalidate(); // Yeniden çizim isteği
+        invalidate();
     }
 
     @Override
@@ -100,11 +98,11 @@ public class CustomPolygonView extends View {
 
         int i = 1;
         for (float progress : cornerProgressMap.values()) {
-             currentAngle = angle * i;
-             currentRadius = radius * progress;
+            currentAngle = angle * i;
+            currentRadius = radius * progress;
 
-             x = (float) (x0 + currentRadius * Math.cos(currentAngle));
-             y = (float) (y0 + currentRadius * Math.sin(currentAngle));
+            x = (float) (x0 + currentRadius * Math.cos(currentAngle));
+            y = (float) (y0 + currentRadius * Math.sin(currentAngle));
 
             //Here for text
             float textRadius = (float) (radius * 0.9f); // Adjust the distance from the center
@@ -125,12 +123,12 @@ public class CustomPolygonView extends View {
             path.lineTo(x, y);
 
             i++;
+
         }
+
 
         path.close();
 
         canvas.drawPath(path, paint);
     }
 }
-
-

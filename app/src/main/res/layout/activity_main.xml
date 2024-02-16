@@ -26,16 +26,16 @@
             android:layout_marginTop="20dp"
 
             >
+
             <TextView
-                
+
                 android:layout_width="315dp"
                 android:layout_height="24dp"
-                android:text="My Projects"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:paddingStart="15dp"
                 android:layout_gravity="center_vertical"
-                />
+                android:paddingStart="15dp"
+                android:text="Projects"
+                android:textSize="18sp"
+                android:textStyle="bold" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/myProjectButton"
                 android:layout_width="25dp"
@@ -171,5 +171,15 @@
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/shareImageView"
+        android:layout_width="54dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

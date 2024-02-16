@@ -54,7 +54,6 @@ public class SkillsActivity extends AppCompatActivity {
         customPolygonView.addCorner(7,0.4f,"Data");
         customPolygonView.addCorner(8,0.75f, "JSON");
 
-
         skillsViewModel.loadSkills();
     }
 

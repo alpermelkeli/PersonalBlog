@@ -28,6 +28,14 @@
         android:textSize="15sp"
         android:textColor="@color/white"
         />
+    <ProgressBar
+        android:layout_marginTop="150dp"
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:visibility="visible" />
+
     <androidx.viewpager2.widget.ViewPager2
         android:layout_marginTop="50dp"
         android:id="@+id/viewPager2"
@@ -38,6 +46,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
 
 </LinearLayout>

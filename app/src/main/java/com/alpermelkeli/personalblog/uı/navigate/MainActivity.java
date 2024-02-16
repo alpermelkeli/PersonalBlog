@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.alpermelkeli.personalblog.R;
 import com.alpermelkeli.personalblog.uı.education.EducationActivity;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     AppCompatButton experienceButton;
     @BindView(R.id.educationButton)
     AppCompatButton educationButton;
+    @BindView(R.id.shareImageView)
+    ImageView shareImageView;
 
 
 
@@ -71,12 +74,24 @@ public class MainActivity extends AppCompatActivity {
                 redirectActivity(new EducationActivity());
             }
         });
+        shareImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                shareApp();
+            }
+        });
     }
 
     private void redirectActivity(AppCompatActivity activity){
         Intent intent = new Intent(this, activity.getClass());
         startActivity(intent);
     }
-
+    private void shareApp(){
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "alpermelkeli");
+        intent.putExtra(Intent.EXTRA_TEXT, "https://www.linkedin.com/in/alpermelkeli/");
+        startActivity(Intent.createChooser(intent, "choose one"));
+    }
 
 }

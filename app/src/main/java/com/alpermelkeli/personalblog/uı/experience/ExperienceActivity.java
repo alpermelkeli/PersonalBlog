@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.alpermelkeli.personalblog.R;
 import com.alpermelkeli.personalblog.model.Experience;
@@ -21,6 +23,10 @@ public class ExperienceActivity extends AppCompatActivity {
     ExperienceViewModel experienceViewModel;
     @BindView(R.id.viewPager2)
     ViewPager2 viewPager2;
+
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +46,9 @@ public class ExperienceActivity extends AppCompatActivity {
             int pageMarginPx = getResources().getDimensionPixelOffset(R.dimen.pageMargin);
             int offsetPx = getResources().getDimensionPixelOffset(R.dimen.pageMarginAndoffset);
             setShowSideItems(viewPager2, pageMarginPx, offsetPx);
+            progressBar.setVisibility(View.GONE);
+
         });
-
-
-
 
 
         experienceViewModel.loadExperiences();

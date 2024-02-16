@@ -12,7 +12,6 @@ import com.alpermelkeli.personalblog.uı.projects.fragments.ProjectFragment;
 
 public class ProjectsActivity extends AppCompatActivity {
     Fragment projectFragment;
-    private boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
