@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,6 +43,16 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
     @BindView(R.id.recentProjectImage)
     ShapeableImageView recentProjectImage;
 
+    @BindView(R.id.projectProgressBar)
+    ProgressBar projectProgressBar;
+    @BindView(R.id.linear1)
+    LinearLayout linear1;
+    @BindView(R.id.linear2)
+    LinearLayout linear2;
+    @BindView(R.id.linear3)
+    LinearLayout linear3;
+
+
 
 
     @Override
@@ -61,6 +73,11 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
             loadRecentProject(projects.get(0)); // Load top of the UI with recent project
             projectAdapter.setProjects(projects);
             projectAdapter.notifyDataSetChanged();
+            projectProgressBar.setVisibility(View.GONE);
+            linear1.setVisibility(View.VISIBLE);
+            linear2.setVisibility(View.VISIBLE);
+            linear3.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.VISIBLE);
         });
 
         projectViewModel.loadProjects();

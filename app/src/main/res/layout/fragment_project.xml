@@ -6,11 +6,20 @@
     android:background="@drawable/app_background"
 
     >
+    <ProgressBar
+        android:id="@+id/projectProgressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"
+        />
     <LinearLayout
         android:layout_width="match_parent"
+        android:id="@+id/linear1"
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:visibility="gone"
         >
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -66,7 +75,12 @@
         android:layout_gravity="center"
         android:background="@drawable/rounded_rectangle_with_shadow"
         android:elevation="8dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/linear2"
+
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -116,6 +130,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="bottom"
+
             >
             <TextView
                 android:layout_marginTop="15dp"
@@ -143,6 +158,9 @@
 
     </LinearLayout>
     <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/linear3"
+
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -161,6 +179,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
