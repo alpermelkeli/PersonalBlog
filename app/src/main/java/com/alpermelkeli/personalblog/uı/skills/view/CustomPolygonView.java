@@ -66,6 +66,7 @@ public class CustomPolygonView extends View {
         if (cornerProgressMap.isEmpty()) {
             return; // Nothing to draw
         }
+
         int x0 = getWidth() / 2;
 
         int y0 = getHeight() / 2;
