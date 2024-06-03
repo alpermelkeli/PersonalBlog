@@ -1,6 +1,6 @@
 package com.alpermelkeli.personalblog.model;
 
-public class Education {
+public class Education extends Model{
     String title;
     String imageUrl;
     String from;
@@ -44,4 +44,5 @@ public class Education {
     public void setCategory(String category) {
         this.category = category;
     }
+
 }

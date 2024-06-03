@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alpermelkeli.personalblog.R;
 import com.alpermelkeli.personalblog.model.Project;
 import com.alpermelkeli.personalblog.uı.projects.adapter.ProjectAdapter;
-import com.alpermelkeli.personalblog.viewmodel.ProjectViewModel;
+import com.alpermelkeli.personalblog.viewmodel.viewmodels.ProjectViewModel;
 import com.bumptech.glide.Glide;
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -69,7 +69,7 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
 
         projectViewModel = new ViewModelProvider(this).get(ProjectViewModel.class);
 
-        projectViewModel.getProjectsLiveData().observe(getViewLifecycleOwner(), projects -> {
+        projectViewModel.getLiveData().observe(getViewLifecycleOwner(), projects -> {
             loadRecentProject(projects.get(0)); // Load top of the UI with recent project
             projectAdapter.setProjects(projects);
             projectAdapter.notifyDataSetChanged();
@@ -80,7 +80,7 @@ public class ProjectFragment extends Fragment implements ProjectAdapter.OnItemCl
             recyclerView.setVisibility(View.VISIBLE);
         });
 
-        projectViewModel.loadProjects();
+        projectViewModel.loadItems();
 
         return rootView;
     }

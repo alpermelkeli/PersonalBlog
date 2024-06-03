@@ -1,6 +1,6 @@
 package com.alpermelkeli.personalblog.model;
 
-public class Experience {
+public class Experience extends Model {
     String title;
     String company;
     String date;

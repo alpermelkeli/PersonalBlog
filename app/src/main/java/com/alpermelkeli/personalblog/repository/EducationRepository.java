@@ -3,6 +3,7 @@ package com.alpermelkeli.personalblog.repository;
 import androidx.annotation.NonNull;
 
 import com.alpermelkeli.personalblog.model.Education;
+import com.alpermelkeli.personalblog.model.Experience;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -13,7 +14,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EducationRepository {
+public class EducationRepository extends Repository{
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     List<Education> educationList = new ArrayList<>();
 
@@ -47,16 +48,10 @@ public class EducationRepository {
 
     }
 
-
-
-
-
-
     public interface EducationCallBack{
 
         void onEducationLoaded(List<Education> educationList);
 
     }
-
 
 }

@@ -13,7 +13,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjectRepository {
+public class ProjectRepository extends Repository{
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     List<Project> projects = new ArrayList<>();
     public void getProjects(ProjectCallback callback) {

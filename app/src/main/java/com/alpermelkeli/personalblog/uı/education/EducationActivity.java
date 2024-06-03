@@ -1,14 +1,13 @@
 package com.alpermelkeli.personalblog.uı.education;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -17,13 +16,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.alpermelkeli.personalblog.R;
 import com.alpermelkeli.personalblog.model.Education;
 import com.alpermelkeli.personalblog.uı.education.adapter.EducationViewPagerAdapter;
-import com.alpermelkeli.personalblog.viewmodel.EducationViewModel;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.concurrent.TimeUnit;
+import com.alpermelkeli.personalblog.viewmodel.viewmodels.EducationViewModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,7 +45,7 @@ public class EducationActivity extends AppCompatActivity {
         }
         educationViewModel = new ViewModelProvider(this).get(EducationViewModel.class);
 
-        educationViewModel.getEducationList().observe(this, educationList -> {
+        educationViewModel.getLiveData().observe(this, educationList -> {
 
             List<Education> androidEducationList = new ArrayList<>();
             List<Education> dataScienceEducationList = new ArrayList<>();
@@ -76,7 +69,7 @@ public class EducationActivity extends AppCompatActivity {
 
         });
 
-        educationViewModel.loadEducations();
+        educationViewModel.loadItems();
 
     }
 }

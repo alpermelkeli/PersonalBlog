@@ -12,13 +12,14 @@ import android.view.View;
 import com.alpermelkeli.personalblog.R;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedHashMap;
-
+import java.util.List;
 public class CustomPolygonView extends View {
 
     private Paint paint;
     private Path path;
-    private LinkedHashMap<Integer, Float> cornerProgressMap;
+    private LinkedHashMap<Integer, Double> cornerProgressMap;
     private ArrayList<String> skillList = new ArrayList<>();
 
     public CustomPolygonView(Context context) {
@@ -37,33 +38,34 @@ public class CustomPolygonView extends View {
     }
 
     private void init() {
+
         paint = new Paint();
+
         paint.setColor(getResources().getColor(R.color.polygon));
+
         paint.setAlpha(50);
+
         paint.setStyle(Paint.Style.FILL);
 
         path = new Path();
+
         cornerProgressMap = new LinkedHashMap<>();
 
     }
 
-    public void setCornerProgress(int cornerIndex, float progress) {
-        if (cornerProgressMap.containsKey(cornerIndex)) {
-            cornerProgressMap.put(cornerIndex, progress);
-            invalidate();
-        }
-    }
 
-    public void addCorner(int cornerIndex, float progress, String skillName) {
+    private void addCorner(int cornerIndex, double progress, String skillName) {
         cornerProgressMap.put(cornerIndex, progress);
         skillList.add(skillName);
-        invalidate();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         // Center of screen
+        if (cornerProgressMap.isEmpty()) {
+            return; // Nothing to draw
+        }
         int x0 = getWidth() / 2;
 
         int y0 = getHeight() / 2;
@@ -97,7 +99,7 @@ public class CustomPolygonView extends View {
         float currentTextAngle = (float) (angle); // Start from the angle of the first corner
 
         int i = 1;
-        for (float progress : cornerProgressMap.values()) {
+        for (double progress : cornerProgressMap.values()) {
             currentAngle = angle * i;
             currentRadius = radius * progress;
 
@@ -130,5 +132,12 @@ public class CustomPolygonView extends View {
         path.close();
 
         canvas.drawPath(path, paint);
+    }
+    public void addAllCorners(List<Corner> cornerList){
+        for(Corner corner:cornerList){
+            addCorner(corner.getCornerIndex(), corner.getProgress(), corner.getSkillName());
+        }
+        invalidate();
+
     }
 }

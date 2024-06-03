@@ -11,7 +11,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-public class ExperienceRepository {
+public class ExperienceRepository extends Repository{
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     List<Experience> experienceList = new ArrayList<>();
 

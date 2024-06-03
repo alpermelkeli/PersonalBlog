@@ -7,13 +7,16 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 
 import com.alpermelkeli.personalblog.R;
+import com.alpermelkeli.personalblog.uı.skills.view.Corner;
 import com.alpermelkeli.personalblog.uı.skills.view.CustomPolygonView;
-import com.alpermelkeli.personalblog.viewmodel.SkillsViewModel;
+import com.alpermelkeli.personalblog.viewmodel.viewmodels.SkillsViewModel;
 
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+import java.util.List;
 public class SkillsActivity extends AppCompatActivity {
     @BindView(R.id.customPolygonView)
     CustomPolygonView customPolygonView;
@@ -35,26 +38,17 @@ public class SkillsActivity extends AppCompatActivity {
         skillsViewModel = new ViewModelProvider(this).get(SkillsViewModel.class);
 
 
-        // TODO Fix issue here
-        skillsViewModel.getSkillLiveData().observe(this, skills -> {
+        skillsViewModel.getLiveData().observe(this, skills -> {
+            List<Corner> cornerList = new ArrayList<>();
             for (int i = 0; i < skills.size(); i++) {
-                float result = (float) skills.get(i).getProgress() / 100;
-                System.out.println(result);
-                //customPolygonView.addCorner(i+1, result,skills.get(i).getName());
+                cornerList.add(new Corner(i+1,skills.get(i).getProgress(), skills.get(i).getName()));
             }
-
+            customPolygonView.addAllCorners(cornerList);
         });
 
-        customPolygonView.addCorner(1,0.6f,"Flask");
-        customPolygonView.addCorner(2,0.55f,"WebServices");
-        customPolygonView.addCorner(3,0.6f,"Java");
-        customPolygonView.addCorner(4,0.75f,"Python");
-        customPolygonView.addCorner(5,0.65f,"Android");
-        customPolygonView.addCorner(6,0.6f,"XML");
-        customPolygonView.addCorner(7,0.4f,"Data");
-        customPolygonView.addCorner(8,0.75f, "JSON");
 
-        skillsViewModel.loadSkills();
+
+        skillsViewModel.loadItems();
     }
 
 

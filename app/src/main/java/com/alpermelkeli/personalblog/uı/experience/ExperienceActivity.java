@@ -11,10 +11,8 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.alpermelkeli.personalblog.R;
-import com.alpermelkeli.personalblog.model.Experience;
 import com.alpermelkeli.personalblog.uı.experience.adapter.ExperiencePagerAdapter;
-import com.alpermelkeli.personalblog.viewmodel.ExperienceViewModel;
-import com.google.firebase.annotations.concurrent.Background;
+import com.alpermelkeli.personalblog.viewmodel.viewmodels.ExperienceViewModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,20 +36,19 @@ public class ExperienceActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
-        experienceViewModel = new  ViewModelProvider(this).get(ExperienceViewModel.class);
+        experienceViewModel = new ViewModelProvider(this).get(ExperienceViewModel.class);
 
-        experienceViewModel.getExperienceLiveData().observe(this, experienceList -> {
+        experienceViewModel.getLiveData().observe(this, experienceList -> {
             ExperiencePagerAdapter adapter = new ExperiencePagerAdapter(experienceList);
             viewPager2.setAdapter(adapter);
             int pageMarginPx = getResources().getDimensionPixelOffset(R.dimen.pageMargin);
             int offsetPx = getResources().getDimensionPixelOffset(R.dimen.pageMarginAndoffset);
             setShowSideItems(viewPager2, pageMarginPx, offsetPx);
             progressBar.setVisibility(View.GONE);
-
         });
 
+        experienceViewModel.loadItems();
 
-        experienceViewModel.loadExperiences();
     }
 
     public static void setShowSideItems(ViewPager2 viewPager2, int pageMarginPx, int offsetPx) {

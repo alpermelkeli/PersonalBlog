@@ -1,18 +1,9 @@
 package com.alpermelkeli.personalblog.model;
 
-public class Skill {
+public class Skill extends Model{
 
-    String imageUrl;
     String name;
-    int progress;
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+    double progress;
 
     public String getName() {
         return name;
@@ -22,11 +13,11 @@ public class Skill {
         this.name = name;
     }
 
-    public int getProgress() {
+    public double getProgress() {
         return progress;
     }
 
-    public void setProgress(int progress) {
+    public void setProgress(double progress) {
         this.progress = progress;
     }
 }

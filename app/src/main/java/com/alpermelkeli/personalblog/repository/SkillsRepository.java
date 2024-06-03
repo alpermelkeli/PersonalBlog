@@ -16,7 +16,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 import java.util.ArrayList;
 
-public class SkillsRepository {
+public class SkillsRepository extends Repository{
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     List<Skill> skills = new ArrayList<>();
@@ -24,7 +24,6 @@ public class SkillsRepository {
     public void getSkills(SkillsCallBack callBack){
 
         db.collection("Skills")
-                .orderBy("id", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -33,11 +32,9 @@ public class SkillsRepository {
                             for(QueryDocumentSnapshot document: task.getResult()){
 
                                 Skill newSkill = new Skill();
-                                newSkill.setImageUrl(document.get("imageUrl").toString());
                                 newSkill.setName(document.get("name").toString());
-                                newSkill.setProgress(Integer.parseInt(document.get("progress").toString()));
+                                newSkill.setProgress(document.getDouble("progress"));
                                 skills.add(newSkill);
-
                             }
                             callBack.onSkillsLoaded(skills);
 

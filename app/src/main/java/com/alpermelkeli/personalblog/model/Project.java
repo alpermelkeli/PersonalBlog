@@ -1,6 +1,6 @@
 package com.alpermelkeli.personalblog.model;
 
-public class Project {
+public class Project extends Model{
     private String projectId;
     private String title;
     private String description;
